@@ -315,7 +315,7 @@
         <div class="label text-third-text-color text-sm">分类</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">4</div>
         <div class="label text-third-text-color text-sm">文章</div>
     </a>
 </div>
@@ -405,12 +405,7 @@
 <div class="code-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> name,group_concat(code) <span class="keyword">from</span> `<span class="keyword">user</span>`</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> name;</span><br></pre></td></tr></table></figure></div>
 
 <p>执行结果：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrW531eEpperDJFEkwF8QaYU6nKNpdlc7pm8HvUHbwAqW7LQA78CVd3Mg/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1"
-                      alt="图片"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrW531eEpperDJFEkwF8QaYU6nKNpdlc7pm8HvUHbwAqW7LQA78CVd3Mg/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>使用<code>group_concat</code>函数，可以轻松的把分组后，name相同的数据拼接到一起，组成一个字符串，用<code>逗号</code>分隔。</p>
 <h2 id="2-char-length"><a href="#2-char-length" class="headerlink" title="2.char_length"></a><strong>2.char_length</strong></h2><p>有时候我们需要获取字符的<code>长度</code>，然后根据字符的长度进行<code>排序</code>。</p>
 <p>MYSQL给我们提供了一些有用的函数，比如：<code>char_length</code>。</p>
@@ -419,12 +414,7 @@
 <div class="code-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> brand <span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;%苏三%&#x27;</span> </span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">char_length</span>(name) <span class="keyword">asc</span> limit <span class="number">5</span>;</span><br></pre></td></tr></table></figure></div>
 
 <p>执行效果如图所示：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWapMBKC6rdelKd3b1l4hv9NibvU56EYmmfcqSXCqvqGoAa2icHoINichkQ/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1"
-                      alt="图片"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWapMBKC6rdelKd3b1l4hv9NibvU56EYmmfcqSXCqvqGoAa2icHoINichkQ/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>name字段使用关键字<code>模糊查询</code>之后，再使用<code>char_length</code>函数获取name字段的字符长度，然后按长度<code>升序</code>。</p>
 <h2 id="3-locate"><a href="#3-locate" class="headerlink" title="3.locate"></a><strong>3.locate</strong></h2><p>有时候我们在查找某个关键字，比如：<code>苏三</code>，需要明确知道它在某个字符串中的位置时，该怎么办呢？</p>
 <p>答：使用<code>locate</code>函数。</p>
@@ -432,12 +422,7 @@
 <div class="code-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> brand <span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;%苏三%&#x27;</span> </span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">char_length</span>(name) <span class="keyword">asc</span>, locate(<span class="string">&#x27;苏三&#x27;</span>,name) <span class="keyword">asc</span> limit <span class="number">5</span>,<span class="number">5</span>;</span><br></pre></td></tr></table></figure></div>
 
 <p>执行结果：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWV9Via8N23vYJs84bfX8oICbW0GuxGU1cEvRSCMPPks7b9STAWloJXmA/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1"
-                      alt="图片"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWV9Via8N23vYJs84bfX8oICbW0GuxGU1cEvRSCMPPks7b9STAWloJXmA/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>先按长度排序，小的排在前面。如果长度相同，则按关键字从左到右进行排序，越靠左的越排在前面。</p>
 <p>除此之外，我们还可以使用：<code>instr</code>和<code>position</code>函数，它们的功能跟<code>locate</code>函数类似，在这里我就不一一介绍了，感兴趣的小伙伴可以找我私聊。</p>
 <h2 id="4-replace"><a href="#4-replace" class="headerlink" title="4.replace"></a><strong>4.replace</strong></h2><p>我们经常会有替换字符串中部分内容的需求，比如：将字符串中的字符A替换成B。</p>
@@ -455,23 +440,13 @@
 <div class="code-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> now() <span class="keyword">from</span> brand limit <span class="number">1</span>;</span><br></pre></td></tr></table></figure></div>
 
 <p>返回结果为下面这样的：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWania1m7tRNRgIheDH1T6MY3k3kJ3E7caMvgH2pI33pqrv8QqjX5ric2Q/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1"
-                      alt="图片"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWania1m7tRNRgIheDH1T6MY3k3kJ3E7caMvgH2pI33pqrv8QqjX5ric2Q/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>它会包含<code>年月日时分秒</code>。</p>
 <p>如果你还想返回<code>毫秒</code>，可以使用<code>now(3)</code>，例如：</p>
 <div class="code-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> now(<span class="number">3</span>) <span class="keyword">from</span> brand limit <span class="number">1</span>;</span><br></pre></td></tr></table></figure></div>
 
 <p>返回结果为下面这样的：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrW03CN0H80yYU4BmT9HjdRjsbKAGuDghhNsLCSOPnxPy4OrtmG5ypX8Q/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1"
-                      alt="图片"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrW03CN0H80yYU4BmT9HjdRjsbKAGuDghhNsLCSOPnxPy4OrtmG5ypX8Q/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>使用起来非常方便好记。</p>
 <h2 id="6-insert-into-…-select"><a href="#6-insert-into-…-select" class="headerlink" title="6.insert into … select"></a><strong>6.insert into … select</strong></h2><p>在工作中很多时候需要<code>插入数据</code>。</p>
 <p>传统的插入数据的sql是这样的：</p>
@@ -490,12 +465,7 @@
 
 <p>肯定不行，因为brand表的name字段创建了唯一索引，同时该表中已经有一条name等于苏三的数据了。</p>
 <p>执行之后直接报错了：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWD2fNhyjZDRQ0jvfQchmcfpz94vQC3M8RxZBKiatxiajIwzcKnguu45Dw/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1"
-                      alt="图片"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWD2fNhyjZDRQ0jvfQchmcfpz94vQC3M8RxZBKiatxiajIwzcKnguu45Dw/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>这就需要在插入之前加一下判断。</p>
 <p>当然很多人通过在sql语句后面拼接<code>not exists</code>语句，也能达到防止出现重复数据的目的，比如：</p>
 <div class="code-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT INTO</span> `brand`(`id`, `code`, `name`, `edit_date`) </span><br><span class="line"><span class="keyword">select</span> <span class="keyword">null</span>,<span class="string">&#x27;108&#x27;</span>, <span class="string">&#x27;苏三&#x27;</span>,now(<span class="number">3</span>) </span><br><span class="line"><span class="keyword">from</span> dual <span class="keyword">where</span>  <span class="keyword">not</span> <span class="keyword">exists</span> (<span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> `brand` <span class="keyword">where</span> name<span class="operator">=</span><span class="string">&#x27;苏三&#x27;</span>);</span><br></pre></td></tr></table></figure></div>
@@ -531,12 +501,7 @@
 <div class="code-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">desc</span> `<span class="keyword">order</span>`;</span><br></pre></td></tr></table></figure></div>
 
 <p>结果如图所示：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWNvGXqnhGvUwBRVktNVXpPicwbEia0XkvDw2iaJA8DzfjflS6Fp5NLKKuw/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1"
-                      alt="图片"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWNvGXqnhGvUwBRVktNVXpPicwbEia0XkvDw2iaJA8DzfjflS6Fp5NLKKuw/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>确实能够看到order表中的字段名称、字段类型、字段长度、是否允许为空，是否主键、默认值等信息。</p>
 <p>但看不到该表的索引信息，如果想看创建了哪些索引，该怎么办呢？</p>
 <p>答：使用<code>show index</code>命令。</p>
@@ -544,30 +509,15 @@
 <div class="code-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> index <span class="keyword">from</span> `<span class="keyword">order</span>`;</span><br></pre></td></tr></table></figure></div>
 
 <p>也能查出该表所有的索引：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWFAr0ebrWdviaz1hn1lNqhfGaFnYadIvRbEOibNcjPS5fvF1iaUASqpyrw/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1"
-                      alt="图片"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWFAr0ebrWdviaz1hn1lNqhfGaFnYadIvRbEOibNcjPS5fvF1iaUASqpyrw/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>但查看字段和索引数据呈现方式，总觉得有点怪怪的，有没有一种更直观的方式？</p>
 <p>答：这就需要使用<code>show create table</code>命令了。</p>
 <p>例如：</p>
 <div class="code-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">create table</span> `<span class="keyword">order</span>`;</span><br></pre></td></tr></table></figure></div>
 
 <p>执行结果如图所示：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWdEwiaWkrDWLy0iaVU8QREjbsvnEfhKsEfAHMzBlicibU2icGVkC87T10yuw/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1"
-                      alt="图片"
-                ></p>
-<p>其中<code>Table</code>表示<code>表名</code>，<code>Create Table</code>就是我们需要看的<code>建表信息</code>，将数据展开：<img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWTabwdXqqMssRicEXgzbKx10K89rAegULBS3icT2N77NMTU1notLTRYYw/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1"
-                      alt="图片"
-                >我们能够看到非常完整的建表语句，表名、字段名、字段类型、字段长度、字符集、主键、索引、执行引擎等都能看到。</p>
+<p><img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWdEwiaWkrDWLy0iaVU8QREjbsvnEfhKsEfAHMzBlicibU2icGVkC87T10yuw/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>其中<code>Table</code>表示<code>表名</code>，<code>Create Table</code>就是我们需要看的<code>建表信息</code>，将数据展开：<img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWTabwdXqqMssRicEXgzbKx10K89rAegULBS3icT2N77NMTU1notLTRYYw/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片">我们能够看到非常完整的建表语句，表名、字段名、字段类型、字段长度、字符集、主键、索引、执行引擎等都能看到。</p>
 <p>非常直接明了。</p>
 <h2 id="11-create-table-…-select"><a href="#11-create-table-…-select" class="headerlink" title="11.create table … select"></a><strong>11.create table … select</strong></h2><p>有时候，我们需要快速备份表。</p>
 <p>通常情况下，可以分两步走：</p>
@@ -596,38 +546,18 @@
 <div class="code-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">explain <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> `<span class="keyword">order</span>` <span class="keyword">where</span> code<span class="operator">=</span><span class="string">&#x27;002&#x27;</span>;</span><br></pre></td></tr></table></figure></div>
 
 <p>结果：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrW96KBvdicW3AyTmCHgPJkrvOVKwicotZia9icjkIwOS5mWU9Oh5wjXbDyFA/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1"
-                      alt="图片"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrW96KBvdicW3AyTmCHgPJkrvOVKwicotZia9icjkIwOS5mWU9Oh5wjXbDyFA/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>通过这几列可以判断索引使用情况，执行计划包含列的含义如下图所示：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrW6WAoNZ2tlMSRHMrIWnHAn5ibHvzRYLaSOJDXibt8ube5ShRua7PpCdRA/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1"
-                      alt="图片"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrW6WAoNZ2tlMSRHMrIWnHAn5ibHvzRYLaSOJDXibt8ube5ShRua7PpCdRA/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>说实话，sql语句没有走索引，排除没有建索引之外，最大的可能性是索引失效了。</p>
 <p>下面说说索引失效的常见原因：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWuQlRy7jGN7FDjLJz5BwtejgGRIGIQaKRPzdXsar5p9OFWk6WWM0mpw/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1"
-                      alt="图片"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWuQlRy7jGN7FDjLJz5BwtejgGRIGIQaKRPzdXsar5p9OFWk6WWM0mpw/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>如果不是上面的这些原因，则需要再进一步排查一下其他原因。</p>
 <h2 id="13-show-processlist"><a href="#13-show-processlist" class="headerlink" title="13.show processlist"></a><strong>13.show processlist</strong></h2><p>有些时候我们线上sql或者数据库出现了问题。比如出现了数据库连接过多问题，或者发现有一条sql语句的执行时间特别长。</p>
 <p>这时候该怎么办呢？</p>
 <p>答：我们可以使用<code>show processlist</code>命令查看<code>当前线程执行情况</code>。</p>
 <p>如图所示：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWHoHhPaF9jxXV8FvC0IuRHRG7NJH5fQg9BPwLjKvNpqWh1yJ1hzdXLw/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1"
-                      alt="图片"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWHoHhPaF9jxXV8FvC0IuRHRG7NJH5fQg9BPwLjKvNpqWh1yJ1hzdXLw/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
 <p>从执行结果中，我们可以查看当前的连接状态，帮助识别出有问题的查询语句。</p>
 <ul>
 <li>id 线程id</li>
@@ -690,7 +620,7 @@
 		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
 			
 			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-				<a class="prev" rel="prev" href="/2025/02/05/Java%E5%88%A4%E7%A9%BA/">
+				<a class="prev" rel="prev" href="/2025/02/05/JavaDetermneIfIsEmpty/">
 					<span class="left arrow-icon flex justify-center items-center">
 						<i class="fa-solid fa-chevron-left"></i>
 					</span>
@@ -797,7 +727,7 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        共撰写了 3 篇文章
+                        共撰写了 4 篇文章
                     </span>
                     
                 </p>

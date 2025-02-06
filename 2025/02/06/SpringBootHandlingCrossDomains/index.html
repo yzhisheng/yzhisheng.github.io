@@ -13,7 +13,7 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2025/02/05/java判空/"/>
+    <link rel="canonical" href="http://example.com/2025/02/06/springboothandlingcrossdomains/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
@@ -23,16 +23,15 @@
         
         <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java判空">
-<meta property="og:url" content="http://example.com/2025/02/05/Java%E5%88%A4%E7%A9%BA/index.html">
+<meta property="og:title" content="SpringBoot项目处理跨域的四种技巧">
+<meta property="og:url" content="http://example.com/2025/02/06/SpringBootHandlingCrossDomains/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/images/redefine-og.webp">
-<meta property="article:published_time" content="2025-02-05T09:54:43.000Z">
-<meta property="article:modified_time" content="2025-02-05T09:55:08.864Z">
+<meta property="article:published_time" content="2025-02-06T00:54:16.000Z">
+<meta property="article:modified_time" content="2025-02-06T02:04:55.991Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/redefine-og.webp">
     
@@ -46,7 +45,7 @@
     
     <title>
         
-            Java判空 | YZhiSheng&#39;s Blog🔥
+            SpringBoot项目处理跨域的四种技巧 | YZhiSheng&#39;s Blog🔥
         
     </title>
 
@@ -316,7 +315,7 @@
         <div class="label text-third-text-color text-sm">分类</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">4</div>
         <div class="label text-third-text-color text-sm">文章</div>
     </a>
 </div>
@@ -339,7 +338,7 @@
 		<div class="article-title relative w-full">
 			
 			<div class="w-full flex items-center pt-6 justify-start">
-				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Java判空</h1>
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">SpringBoot项目处理跨域的四种技巧</h1>
 			</div>
 			
 		</div>
@@ -360,31 +359,20 @@
 					<div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2025-02-05 17:54:43</span>
-        <span class="mobile">2025-02-05 17:54:43</span>
+        <span class="desktop">2025-02-06 08:54:16</span>
+        <span class="mobile">2025-02-06 08:54:16</span>
         <span class="hover-info">创建</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-02-05 17:55:08</span>
-            <span class="mobile">2025-02-05 17:55:08</span>
+            <span class="desktop">2025-02-06 10:04:55</span>
+            <span class="mobile">2025-02-06 10:04:55</span>
             <span class="hover-info">更新</span>
         </span>
     
 
     
-    
-        <span class="article-tags article-meta-item">
-            <i class="fa-regular fa-tags"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/tags/java/">java</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
     
 
     
@@ -406,76 +394,36 @@
 
 
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-			<p>空指针异常是出现频率比较高的bug，在出现空指针时，很多小伙伴都是习惯性地加一个 !&#x3D;null 的判断，这个bug就解决了。</p>
-<p>当代码中频繁出现 !&#x3D;null 的判断时，我们就会很头疼，能不能高效、优雅地做这个判断？</p>
-<p>答案当然是可以的。</p>
-<h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>当我们要做 !&#x3D;null 的判断时，请停顿一下，看一下我们要做判断的这个数据是什么类型？</p>
-<p>数据类型无非就是String字符串、Object&#x2F;自定义对象、List集合、Array数组、Map集合等类型。</p>
-<h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><p>思考这个数据类型对应的工具类有哪些？</p>
-<p>String类型，对应的工具类有StringUtils。</p>
-<p>Object对象，对应的工具类有ObjectUtils。</p>
-<p>Array数组，对应的工具类有Arrays。</p>
-<h2 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h2><p>使用对应类型的工具类做判断。</p>
-<p>1、如果这个数据是String类型时，请使用StringUtils工具类。</p>
-<div class="code-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">StringUtils.isEmpty(str);  <span class="comment">// true</span></span><br></pre></td></tr></table></figure></div>
-
-<p>StringUtils工具类比较有针对性，是针对String字符串的工具类。</p>
-<div class="code-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">isEmpty</span><span class="params">(<span class="meta">@Nullable</span> Object str)</span> &#123;</span><br><span class="line">   <span class="keyword">return</span> str == <span class="literal">null</span> || <span class="string">&quot;&quot;</span>.equals(str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>在isEmpty方法中，既有为null的判断，也有是否等于空字符串的判断。</p>
-<p>2、如果这个数据是Object类型，请使用ObjectUtils工具类。</p>
-<div class="code-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Object</span> <span class="variable">obj</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">ObjectUtils.isEmpty(obj); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></div>
-
-<p>3、如果这个数据是Map类型，也可以使用ObjectUtils工具类。</p>
-<div class="code-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String,Object&gt; map = Collections.emptyMap();</span><br><span class="line">ObjectUtils.isEmpty(map);<span class="comment">// true</span></span><br></pre></td></tr></table></figure></div>
-
-<p>4、如果这个数据是List类型，还可以使用ObjectUtils工具类。</p>
-<div class="code-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; list =Collections.EMPTY_LIST;</span><br><span class="line">ObjectUtils.isEmpty(list); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></div>
-
-<p>5、如果这个数据是数组类型，依旧可以使用ObjectUtils工具类。</p>
-<div class="code-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数组</span></span><br><span class="line">Object[] objArr = <span class="literal">null</span>;</span><br><span class="line">ObjectUtils.isEmpty(objArr); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></div>
-
-<p>ObjectUtils 中的isEmpty()这一个方法，分别可以对字符串、数组、Map集合、List集合进行是否等于null的判断。</p>
-<p>这个isEmpty方法为什么能判断这么多种数据类型呢？一起看下它的源码。</p>
-<div class="code-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">isEmpty</span><span class="params">(<span class="meta">@Nullable</span> Object obj)</span> &#123;</span><br><span class="line">    <span class="comment">// 判断obj是否为null,如果是直接f</span></span><br><span class="line">    <span class="keyword">if</span> (obj == <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 判断obj是否是Optional的子类</span></span><br><span class="line">    <span class="keyword">if</span> (obj <span class="keyword">instanceof</span> Optional) &#123;</span><br><span class="line">      <span class="comment">// 如果是，则调用isPresent方法判断是否为null</span></span><br><span class="line">      <span class="keyword">return</span> !((Optional) obj).isPresent();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 判断obj是否是CharSequence的子类</span></span><br><span class="line">    <span class="keyword">if</span> (obj <span class="keyword">instanceof</span> CharSequence) &#123;</span><br><span class="line">      <span class="comment">// 如果是，则获取长度，长度等于0时，就认为这个obj是空字符串</span></span><br><span class="line">      <span class="keyword">return</span> ((CharSequence) obj).length() == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 判断obj是否为数组</span></span><br><span class="line">    <span class="keyword">if</span> (obj.getClass().isArray()) &#123;</span><br><span class="line">      <span class="comment">// 数组的长度等于0就认为这个数组是空数组</span></span><br><span class="line">      <span class="keyword">return</span> Array.getLength(obj) == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 判断obj是否为Collection集合的子类</span></span><br><span class="line">    <span class="keyword">if</span> (obj <span class="keyword">instanceof</span> Collection) &#123;</span><br><span class="line">      <span class="comment">// 用Collection子类的isEmpty方法判断集合是否为空</span></span><br><span class="line">      <span class="keyword">return</span> ((Collection) obj).isEmpty();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 判断obj是否为Map接口的子类</span></span><br><span class="line">    <span class="keyword">if</span> (obj <span class="keyword">instanceof</span> Map) &#123;</span><br><span class="line">      <span class="comment">// 如果是，则进行强转，并用子类的isEmpty方法判断集合是否为空</span></span><br><span class="line">      <span class="keyword">return</span> ((Map) obj).isEmpty();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// else</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>在这个静态方法中，首先对传入的obj对象进行是否等于null的判断，如果是则返回。如果不是null，对obj进行数据类型进行定位，然后根据数据类型进行判断。</p>
-<p>在这个方法中，封装了Optional、CharSequence、Array、Collection、Map数据类型，几乎涵盖所有的数据类型。</p>
-<p>通过这段源码，我们也可以看出，它对复杂类型的集合的判断存在一些缺陷。也就是说它只判断了集合的长度，集合的长度为0，就认为集合是空的。</p>
-<div class="code-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个只有一个元素的List集合</span></span><br><span class="line">List&lt;Integer&gt; list = Collections.singletonList(<span class="literal">null</span>);</span><br><span class="line">ObjectUtils.isEmpty(list); <span class="comment">// false</span></span><br></pre></td></tr></table></figure></div>
-
-<p>上面的这段代码，我们创建了一个只有一个元素、且这个元素为null的List集合。</p>
-<p>如果是对象数组，数组里有一个对象，但这一个对象为null，这个判断就失灵了。</p>
-<p>ObjectUtils 类中对对象数组的判断是另外一个isEmpty方法。</p>
-<div class="code-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">isEmpty</span><span class="params">(<span class="meta">@Nullable</span> Object[] array)</span> &#123;</span><br><span class="line"><span class="keyword">return</span> array == <span class="literal">null</span> || array.length == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>因此在这2种情况下，我们再使用ObjectUtils的isEmpty方法就不合适了，我们需要对集合或数组里的每一个元素进行判断是否为null。</p>
-<p>6、针对List集合中元素是否为空的正确判断</p>
-<div class="code-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Arrays.stream(list.toArray()).allMatch(ObjectUtils::isEmptyisNull);</span><br></pre></td></tr></table></figure></div>
-
-<p>这里用到了Arrays工具类。需要先把List集合转换成数组，然后再使用Arrays工具类对数组里的元素逐一判断是否为null。</p>
-<p>7、针对Map集合是否为空为null的判断</p>
-<div class="code-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String,Object&gt; map = Collections.emptyMap();</span><br><span class="line">CollectionUtils.isEmpty(map);</span><br></pre></td></tr></table></figure></div>
-
-<p>CollectionUtils工具类中isEmpty判断方法源码：</p>
-<div class="code-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">isEmpty</span><span class="params">(<span class="meta">@Nullable</span> Map&lt;?, ?&gt; map)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> map == <span class="literal">null</span> || map.isEmpty();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>map是否等于null，map集合是否为空，这一个方法中聚合了两个判断。我们直接调用它就可以减少我们的工作量。</p>
-<p>除此之外，CollectionUtils工具类中还有针对List集合的isEmpty方法：</p>
-<div class="code-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; list = <span class="literal">null</span>;</span><br><span class="line"><span class="comment">// 使用CollectionUtils工具类判断list集合是否为空</span></span><br><span class="line">CollectionUtils.isEmpty(list); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></div>
-
-<p>针对List集合的isEmpty源码：</p>
-<div class="code-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">isEmpty</span><span class="params">(<span class="meta">@Nullable</span> Collection&lt;?&gt; collection)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> collection == <span class="literal">null</span> || collection.isEmpty();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>在这个方法中，既有为null的判断，也有isEmpty的判断，聚合了两个判断，我们直接调用它也可以减少我们的工作量。</p>
-<h2 id="最后总结一下"><a href="#最后总结一下" class="headerlink" title="最后总结一下"></a>最后总结一下</h2><p>判断一个数据是否为null，可以经过三步，第一步思考属于什么数据类型，第二步根据数据类型选择正确的工具类，第三步，使用正确的工具类进行判断。</p>
-<p>针对String字符串类型的数据，直接使用StringUtils工具类。</p>
-<p>针对除了String之外的数据类型都可以使用ObjectUtils工具类。</p>
-<p>针对List集合、Map集合，除了ObjectUtils还可以使用CollectionUtils工具类进行判断。</p>
-<p>针对数组和List集合中的子元素是否都为null的判断，则需要遍历判断。</p>
-<p>以上便是本次的总结，希望对你有帮助。</p>
-<p>List集合、Map集合对应的工具类有Collections、CollectionUtils等。</p>
-<p>这些工具类都是Java、Spring框架自带的工具类。</p>
+			<p><img lazyload src="/images/loading.svg" data-src="/2025/02/06/SpringBootHandlingCrossDomains/01.jpg" alt="图片"></p>
+<h1 id="1-什么是跨域"><a href="#1-什么是跨域" class="headerlink" title="1 什么是跨域"></a>1 什么是跨域</h1><p>我们先看下一个典型的网站的地址：</p>
+<p><img lazyload src="/images/loading.svg" data-src="/2025/02/06/SpringBootHandlingCrossDomains/02.jpg" alt="图片"></p>
+<p><strong>同源</strong>是指：<strong>协议、域名、端口号完全相同</strong>。</p>
+<p>下表给出了与 URL http:&#x2F;<a class="link" target="_blank" rel="noopener" href="http://www.training.com/dir/page.html">www.training.com/dir/page.html<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> 的源进行对比的示例 :</p>
+<p><img lazyload src="/images/loading.svg" data-src="/2025/02/06/SpringBootHandlingCrossDomains/10.jpg" alt="图片"></p>
+<p>当用户通过浏览器访问应用（http:&#x2F;admin.training.com）时，调用接口的域名非同源域名(http:&#x2F;api.training.com)，这是显而易见的跨域场景。</p>
+<h1 id="2-理解-CORS"><a href="#2-理解-CORS" class="headerlink" title="2 理解 CORS"></a>2 理解 CORS</h1><p><strong>CORS</strong> 是一个 <code>W3C</code> 标准，全称是”跨域资源共享”（Cross-origin  resource  sharing）, 它需要浏览器和服务器同时支持他，允许浏览器向跨源服务器发送<code>XMLHttpRequest</code>请求，从而克服 AJAX 只能<strong>同源</strong>使用的限制。</p>
+<p><strong>跨域资源共享</strong>标准新增了一组 HTTP 首部字段，允许服务器声明哪些源站通过浏览器有权限访问哪些资源。</p>
+<p>规范要求，对那些可能对服务器数据产生副作用的 HTTP 请求方法（特别是 GET 以外的 HTTP 请求，或者搭配某些 MIME 类型的 POST 请求），浏览器必须首先使用 OPTIONS 方法发起一个预检请求（preflight request），从而获知服务端是否允许该跨域请求。</p>
+<p>服务器确认允许之后，才发起实际的 HTTP 请求。在预检请求的返回中，服务器端也可以通知客户端，是否需要携带身份凭证（包括 Cookies 和 HTTP 认证相关数据）。</p>
+<p><img lazyload src="/images/loading.svg" data-src="/2025/02/06/SpringBootHandlingCrossDomains/03.jpg" alt="图片"></p>
+<h2 id="01-简单请求"><a href="#01-简单请求" class="headerlink" title="01 简单请求"></a>01 简单请求</h2><p>简单请求模式，浏览器直接发送跨域请求，并在请求头中携带 Origin 的头，表明这是一个跨域的请求。服务器端接到请求后，会根据自己的跨域规则，通过 Access-Control-Allow-Origin 和 Access-Control-Allow-Methods 响应头，来返回验证结果。</p>
+<p><img lazyload src="/images/loading.svg" data-src="/2025/02/06/SpringBootHandlingCrossDomains/04.jpg" alt="图片"></p>
+<h2 id="02-预检请求"><a href="#02-预检请求" class="headerlink" title="02 预检请求"></a>02 预检请求</h2><p>浏览器在发现页面发出的请求非简单请求，并不会立即执行对应的请求代码，而是会触发预先请求模式。预先请求模式会先发送preflight request（预先验证请求），preflight request是一个 OPTION 请求，用于询问要被跨域访问的服务器，是否允许当前域名下的页面发送跨域的请求。在得到服务器的跨域授权后才能发送真正的 HTTP 请求。</p>
+<p><img lazyload src="/images/loading.svg" data-src="/2025/02/06/SpringBootHandlingCrossDomains/05.jpg" alt="图片"></p>
+<h1 id="3-Nginx-配置"><a href="#3-Nginx-配置" class="headerlink" title="3 Nginx 配置"></a>3 Nginx 配置</h1><p><img lazyload src="/images/loading.svg" data-src="/2025/02/06/SpringBootHandlingCrossDomains/06.jpg" alt="图片"></p>
+<p>我们不用配置 SpringBoot 项目，在反向代理层 Nginx 直接配置 CORS ，典型配置如下图：</p>
+<p><img lazyload src="/images/loading.svg" data-src="/2025/02/06/SpringBootHandlingCrossDomains/07.jpg" alt="图片"></p>
+<h1 id="4-配置类实现-addCorsMapping-接口"><a href="#4-配置类实现-addCorsMapping-接口" class="headerlink" title="4 配置类实现 addCorsMapping 接口"></a>4 配置类实现 addCorsMapping 接口</h1><p>SpringBoot 中新增一个配置类 CorsConfig.java，继承 WebMvcConfigurerAdapter 或者实现WebMvcConfigurer 接口，项目启动后，会自动读取配置。</p>
+<p><img lazyload src="/images/loading.svg" data-src="/2025/02/06/SpringBootHandlingCrossDomains/08.jpg" alt="图片"></p>
+<h1 id="5-CorsFilter-过滤器模式"><a href="#5-CorsFilter-过滤器模式" class="headerlink" title="5 CorsFilter 过滤器模式"></a>5 CorsFilter 过滤器模式</h1><p>下图是 SpringMvc 模式里，过滤器，拦截器，控制器的执行顺序。</p>
+<p><img lazyload src="/images/loading.svg" data-src="/2025/02/06/SpringBootHandlingCrossDomains/corsfilter.jpg" alt="图片"></p>
+<p>CorsFilter 过滤器模式的优点是：优先级高，可以规避代码中业务拦截器异常导致 adCorsMappings 方法失效的问题。</p>
+<p>我们需要定义一个 corsFilter 方法，<code>@Bean</code> 注解表示此方法返回一个Spring Bean，该 Bean 将由Spring 容器管理。</p>
+<p><code>corsFilter()</code> 方法定义了一个 <code>FilterRegistrationBean</code>，这个 bean 是用来注册 <code>CorsFilter</code> 的，后者用于处理 CORS 请求。</p>
+<p><img lazyload src="/images/loading.svg" data-src="/2025/02/06/SpringBootHandlingCrossDomains/09.jpg" alt="图片"></p>
+<h1 id="6-网关模式"><a href="#6-网关模式" class="headerlink" title="6 网关模式"></a>6 网关模式</h1><p>在微服务架构体系中，网关是非常核心的组件。API 网关可以做鉴权，限流，灰度等，同时可以配置 CORS 。内部服务端不用特别关注跨域这个问题。</p>
+<p><img lazyload src="/images/loading.svg" data-src="/2025/02/06/SpringBootHandlingCrossDomains/11.jpg" alt="图片"></p>
+<p><strong>因此假如是 SpringCloud 体系，我们只需要配置 SpringCloud gateway 的跨域即可。</strong></p>
 
 		</div>
 
@@ -483,18 +431,18 @@
 		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
 			<div class="article-copyright-info-container">
     <ul>
-        <li><strong>标题:</strong> Java判空</li>
+        <li><strong>标题:</strong> SpringBoot项目处理跨域的四种技巧</li>
         <li><strong>作者:</strong> 源稚生</li>
         <li><strong>创建于
-                :</strong> 2025-02-05 17:54:43</li>
+                :</strong> 2025-02-06 08:54:16</li>
         
             <li>
                 <strong>更新于
-                    :</strong> 2025-02-05 17:55:08
+                    :</strong> 2025-02-06 10:04:55
             </li>
         
         <li>
-            <strong>链接:</strong> https://github.com/yzhisheng/2025/02/05/Java判空/
+            <strong>链接:</strong> https://github.com/yzhisheng/2025/02/06/SpringBootHandlingCrossDomains/
         </li>
         <li>
             <strong>
@@ -513,14 +461,6 @@
 		
 
 		
-		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
-			
-			<li class="tag-item mx-0.5">
-				<a href="/tags/java/">#java</a>&nbsp;
-			</li>
-			
-		</ul>
-		
 
 		
 
@@ -529,9 +469,9 @@
 			
 			
 			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-				<a class="next" rel="next" href="/2025/02/05/MySQL%E4%B8%AD%E8%BF%9914%E4%B8%AA%E7%A5%9E%E4%BB%99%E5%8A%9F%E8%83%BD/">
+				<a class="next" rel="next" href="/2025/02/05/JavaDetermneIfIsEmpty/">
 					<span class="title flex justify-center items-center">
-						<span class="post-nav-title-item">MySQL中这14个神仙功能</span>
+						<span class="post-nav-title-item">Java判空</span>
 						<span class="post-nav-item">下一篇</span>
 					</span>
 					<span class="right arrow-icon flex justify-center items-center">
@@ -595,8 +535,8 @@
 		<div class="post-toc-wrap">
 	<div class="post-toc">
 		<div class="toc-title">目录</div>
-		<div class="page-title">Java判空</div>
-		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5"><span class="nav-text">第一步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5"><span class="nav-text">第二步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5"><span class="nav-text">第三步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%90%8E%E6%80%BB%E7%BB%93%E4%B8%80%E4%B8%8B"><span class="nav-text">最后总结一下</span></a></li></ol>
+		<div class="page-title">SpringBoot项目处理跨域的四种技巧</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E8%B7%A8%E5%9F%9F"><span class="nav-text">1 什么是跨域</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E7%90%86%E8%A7%A3-CORS"><span class="nav-text">2 理解 CORS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#01-%E7%AE%80%E5%8D%95%E8%AF%B7%E6%B1%82"><span class="nav-text">01 简单请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#02-%E9%A2%84%E6%A3%80%E8%AF%B7%E6%B1%82"><span class="nav-text">02 预检请求</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Nginx-%E9%85%8D%E7%BD%AE"><span class="nav-text">3 Nginx 配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E9%85%8D%E7%BD%AE%E7%B1%BB%E5%AE%9E%E7%8E%B0-addCorsMapping-%E6%8E%A5%E5%8F%A3"><span class="nav-text">4 配置类实现 addCorsMapping 接口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-CorsFilter-%E8%BF%87%E6%BB%A4%E5%99%A8%E6%A8%A1%E5%BC%8F"><span class="nav-text">5 CorsFilter 过滤器模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-%E7%BD%91%E5%85%B3%E6%A8%A1%E5%BC%8F"><span class="nav-text">6 网关模式</span></a></li></ol>
 
 	</div>
 </div>
@@ -623,7 +563,7 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        共撰写了 3 篇文章
+                        共撰写了 4 篇文章
                     </span>
                     
                 </p>
