@@ -13,7 +13,7 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2025/02/05/mysql中这14个神仙功能/"/>
+    <link rel="canonical" href="http://example.com/2025/02/05/highfrequencymsqlcommands/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
@@ -24,14 +24,15 @@
         <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL中这14个神仙功能">
-<meta property="og:url" content="http://example.com/2025/02/05/MySQL%E4%B8%AD%E8%BF%9914%E4%B8%AA%E7%A5%9E%E4%BB%99%E5%8A%9F%E8%83%BD/index.html">
+<meta property="og:url" content="http://example.com/2025/02/05/HighFrequencyMsqlCommands/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/images/redefine-og.webp">
 <meta property="article:published_time" content="2025-02-05T06:47:11.000Z">
-<meta property="article:modified_time" content="2025-02-05T06:56:05.648Z">
+<meta property="article:modified_time" content="2025-02-06T02:57:42.900Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/redefine-og.webp">
     
@@ -82,7 +83,7 @@
 
     <script id="hexo-configurations">
     window.config = {"hostname":"example.com","root":"/","language":"zh-CN"};
-    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"Hexo Theme Redefine, Redefine Your Hexo Journey."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"YZhiSheng's Blog","subtitle":{"text":["While there is life, there is hope.","Passion begets persistence.","人生需要Passion🔥!"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Categories":{"icon":"fa-solid fa-folder","path":"/categories/"},"About":{"icon":"fa-regular fa-user","submenus":{"Github":"https://github.com/EvanNotFound/hexo-theme-redefine","Blog":"https://ohevan.com"}}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"Hexo Theme Redefine, Redefine Your Hexo Journey."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"YZhiSheng's Blog","subtitle":{"text":["While there is life, there is hope.","一息尚存，希望不灭!","Passion begets persistence.","人生需要Passion🔥!"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Categories":{"icon":"fa-solid fa-folder","path":"/categories/"},"About":{"icon":"fa-regular fa-user","submenus":{"Github":"https://github.com/EvanNotFound/hexo-theme-redefine","Blog":"https://ohevan.com"}}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
     window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
     window.data = {"masonry":false};
   </script>
@@ -307,7 +308,7 @@
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">2</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
         <div class="label text-third-text-color text-sm">标签</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -366,13 +367,24 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-02-05 14:56:05</span>
-            <span class="mobile">2025-02-05 14:56:05</span>
+            <span class="desktop">2025-02-06 10:57:42</span>
+            <span class="mobile">2025-02-06 10:57:42</span>
             <span class="hover-info">更新</span>
         </span>
     
 
     
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/mysql/">mysql</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
     
 
     
@@ -394,7 +406,8 @@
 
 
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-			<h2 id="1-group-concat"><a href="#1-group-concat" class="headerlink" title="1.group_concat"></a><strong>1.group_concat</strong></h2><p>在我们平常的工作中，使用<code>group by</code>进行分组的场景，是非常多的。</p>
+			<p>看到一篇不错的文章，就转来分享下~</p>
+<h2 id="1-group-concat"><a href="#1-group-concat" class="headerlink" title="1.group_concat"></a><strong>1.group_concat</strong></h2><p>在我们平常的工作中，使用<code>group by</code>进行分组的场景，是非常多的。</p>
 <p>比如想统计出用户表中，名称不同的用户的具体名称有哪些？</p>
 <p>具体sql如下：</p>
 <div class="code-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> name <span class="keyword">from</span> `<span class="keyword">user</span>`</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> name;</span><br></pre></td></tr></table></figure></div>
@@ -405,7 +418,7 @@
 <div class="code-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> name,group_concat(code) <span class="keyword">from</span> `<span class="keyword">user</span>`</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> name;</span><br></pre></td></tr></table></figure></div>
 
 <p>执行结果：</p>
-<p><img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrW531eEpperDJFEkwF8QaYU6nKNpdlc7pm8HvUHbwAqW7LQA78CVd3Mg/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p><img lazyload src="/images/loading.svg" data-src="/2025/02/05/HighFrequencyMsqlCommands/01.jpg" alt="图片"></p>
 <p>使用<code>group_concat</code>函数，可以轻松的把分组后，name相同的数据拼接到一起，组成一个字符串，用<code>逗号</code>分隔。</p>
 <h2 id="2-char-length"><a href="#2-char-length" class="headerlink" title="2.char_length"></a><strong>2.char_length</strong></h2><p>有时候我们需要获取字符的<code>长度</code>，然后根据字符的长度进行<code>排序</code>。</p>
 <p>MYSQL给我们提供了一些有用的函数，比如：<code>char_length</code>。</p>
@@ -414,7 +427,7 @@
 <div class="code-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> brand <span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;%苏三%&#x27;</span> </span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">char_length</span>(name) <span class="keyword">asc</span> limit <span class="number">5</span>;</span><br></pre></td></tr></table></figure></div>
 
 <p>执行效果如图所示：</p>
-<p><img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWapMBKC6rdelKd3b1l4hv9NibvU56EYmmfcqSXCqvqGoAa2icHoINichkQ/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p><img lazyload src="/images/loading.svg" data-src="/2025/02/05/HighFrequencyMsqlCommands/02.jpg" alt="图片"></p>
 <p>name字段使用关键字<code>模糊查询</code>之后，再使用<code>char_length</code>函数获取name字段的字符长度，然后按长度<code>升序</code>。</p>
 <h2 id="3-locate"><a href="#3-locate" class="headerlink" title="3.locate"></a><strong>3.locate</strong></h2><p>有时候我们在查找某个关键字，比如：<code>苏三</code>，需要明确知道它在某个字符串中的位置时，该怎么办呢？</p>
 <p>答：使用<code>locate</code>函数。</p>
@@ -422,7 +435,7 @@
 <div class="code-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> brand <span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;%苏三%&#x27;</span> </span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">char_length</span>(name) <span class="keyword">asc</span>, locate(<span class="string">&#x27;苏三&#x27;</span>,name) <span class="keyword">asc</span> limit <span class="number">5</span>,<span class="number">5</span>;</span><br></pre></td></tr></table></figure></div>
 
 <p>执行结果：</p>
-<p><img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWV9Via8N23vYJs84bfX8oICbW0GuxGU1cEvRSCMPPks7b9STAWloJXmA/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p><img lazyload src="/images/loading.svg" data-src="/2025/02/05/HighFrequencyMsqlCommands/03.jpg" alt="图片"></p>
 <p>先按长度排序，小的排在前面。如果长度相同，则按关键字从左到右进行排序，越靠左的越排在前面。</p>
 <p>除此之外，我们还可以使用：<code>instr</code>和<code>position</code>函数，它们的功能跟<code>locate</code>函数类似，在这里我就不一一介绍了，感兴趣的小伙伴可以找我私聊。</p>
 <h2 id="4-replace"><a href="#4-replace" class="headerlink" title="4.replace"></a><strong>4.replace</strong></h2><p>我们经常会有替换字符串中部分内容的需求，比如：将字符串中的字符A替换成B。</p>
@@ -440,13 +453,13 @@
 <div class="code-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> now() <span class="keyword">from</span> brand limit <span class="number">1</span>;</span><br></pre></td></tr></table></figure></div>
 
 <p>返回结果为下面这样的：</p>
-<p><img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWania1m7tRNRgIheDH1T6MY3k3kJ3E7caMvgH2pI33pqrv8QqjX5ric2Q/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p><img lazyload src="/images/loading.svg" data-src="/2025/02/05/HighFrequencyMsqlCommands/04.jpg" alt="图片"></p>
 <p>它会包含<code>年月日时分秒</code>。</p>
 <p>如果你还想返回<code>毫秒</code>，可以使用<code>now(3)</code>，例如：</p>
 <div class="code-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> now(<span class="number">3</span>) <span class="keyword">from</span> brand limit <span class="number">1</span>;</span><br></pre></td></tr></table></figure></div>
 
 <p>返回结果为下面这样的：</p>
-<p><img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrW03CN0H80yYU4BmT9HjdRjsbKAGuDghhNsLCSOPnxPy4OrtmG5ypX8Q/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p><img lazyload src="/images/loading.svg" data-src="/2025/02/05/HighFrequencyMsqlCommands/05.jpg" alt="图片"></p>
 <p>使用起来非常方便好记。</p>
 <h2 id="6-insert-into-…-select"><a href="#6-insert-into-…-select" class="headerlink" title="6.insert into … select"></a><strong>6.insert into … select</strong></h2><p>在工作中很多时候需要<code>插入数据</code>。</p>
 <p>传统的插入数据的sql是这样的：</p>
@@ -465,7 +478,7 @@
 
 <p>肯定不行，因为brand表的name字段创建了唯一索引，同时该表中已经有一条name等于苏三的数据了。</p>
 <p>执行之后直接报错了：</p>
-<p><img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWD2fNhyjZDRQ0jvfQchmcfpz94vQC3M8RxZBKiatxiajIwzcKnguu45Dw/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p><img lazyload src="/images/loading.svg" data-src="/2025/02/05/HighFrequencyMsqlCommands/06.jpg" alt="图片"></p>
 <p>这就需要在插入之前加一下判断。</p>
 <p>当然很多人通过在sql语句后面拼接<code>not exists</code>语句，也能达到防止出现重复数据的目的，比如：</p>
 <div class="code-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT INTO</span> `brand`(`id`, `code`, `name`, `edit_date`) </span><br><span class="line"><span class="keyword">select</span> <span class="keyword">null</span>,<span class="string">&#x27;108&#x27;</span>, <span class="string">&#x27;苏三&#x27;</span>,now(<span class="number">3</span>) </span><br><span class="line"><span class="keyword">from</span> dual <span class="keyword">where</span>  <span class="keyword">not</span> <span class="keyword">exists</span> (<span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> `brand` <span class="keyword">where</span> name<span class="operator">=</span><span class="string">&#x27;苏三&#x27;</span>);</span><br></pre></td></tr></table></figure></div>
@@ -501,7 +514,7 @@
 <div class="code-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">desc</span> `<span class="keyword">order</span>`;</span><br></pre></td></tr></table></figure></div>
 
 <p>结果如图所示：</p>
-<p><img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWNvGXqnhGvUwBRVktNVXpPicwbEia0XkvDw2iaJA8DzfjflS6Fp5NLKKuw/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p><img lazyload src="/images/loading.svg" data-src="/2025/02/05/HighFrequencyMsqlCommands/07.jpg" alt="图片"></p>
 <p>确实能够看到order表中的字段名称、字段类型、字段长度、是否允许为空，是否主键、默认值等信息。</p>
 <p>但看不到该表的索引信息，如果想看创建了哪些索引，该怎么办呢？</p>
 <p>答：使用<code>show index</code>命令。</p>
@@ -509,15 +522,15 @@
 <div class="code-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> index <span class="keyword">from</span> `<span class="keyword">order</span>`;</span><br></pre></td></tr></table></figure></div>
 
 <p>也能查出该表所有的索引：</p>
-<p><img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWFAr0ebrWdviaz1hn1lNqhfGaFnYadIvRbEOibNcjPS5fvF1iaUASqpyrw/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p><img lazyload src="/images/loading.svg" data-src="/2025/02/05/HighFrequencyMsqlCommands/08.jpg" alt="图片"></p>
 <p>但查看字段和索引数据呈现方式，总觉得有点怪怪的，有没有一种更直观的方式？</p>
 <p>答：这就需要使用<code>show create table</code>命令了。</p>
 <p>例如：</p>
 <div class="code-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">create table</span> `<span class="keyword">order</span>`;</span><br></pre></td></tr></table></figure></div>
 
 <p>执行结果如图所示：</p>
-<p><img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWdEwiaWkrDWLy0iaVU8QREjbsvnEfhKsEfAHMzBlicibU2icGVkC87T10yuw/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
-<p>其中<code>Table</code>表示<code>表名</code>，<code>Create Table</code>就是我们需要看的<code>建表信息</code>，将数据展开：<img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWTabwdXqqMssRicEXgzbKx10K89rAegULBS3icT2N77NMTU1notLTRYYw/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片">我们能够看到非常完整的建表语句，表名、字段名、字段类型、字段长度、字符集、主键、索引、执行引擎等都能看到。</p>
+<p><img lazyload src="/images/loading.svg" data-src="/2025/02/05/HighFrequencyMsqlCommands/09.jpg" alt="图片"></p>
+<p>其中<code>Table</code>表示<code>表名</code>，<code>Create Table</code>就是我们需要看的<code>建表信息</code>，将数据展开：<img lazyload src="/images/loading.svg" data-src="/2025/02/05/HighFrequencyMsqlCommands/10.jpg" alt="图片">我们能够看到非常完整的建表语句，表名、字段名、字段类型、字段长度、字符集、主键、索引、执行引擎等都能看到。</p>
 <p>非常直接明了。</p>
 <h2 id="11-create-table-…-select"><a href="#11-create-table-…-select" class="headerlink" title="11.create table … select"></a><strong>11.create table … select</strong></h2><p>有时候，我们需要快速备份表。</p>
 <p>通常情况下，可以分两步走：</p>
@@ -546,18 +559,18 @@
 <div class="code-container" data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">explain <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> `<span class="keyword">order</span>` <span class="keyword">where</span> code<span class="operator">=</span><span class="string">&#x27;002&#x27;</span>;</span><br></pre></td></tr></table></figure></div>
 
 <p>结果：</p>
-<p><img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrW96KBvdicW3AyTmCHgPJkrvOVKwicotZia9icjkIwOS5mWU9Oh5wjXbDyFA/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p><img lazyload src="/images/loading.svg" data-src="/2025/02/05/HighFrequencyMsqlCommands/12.jpg" alt="图片"></p>
 <p>通过这几列可以判断索引使用情况，执行计划包含列的含义如下图所示：</p>
-<p><img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrW6WAoNZ2tlMSRHMrIWnHAn5ibHvzRYLaSOJDXibt8ube5ShRua7PpCdRA/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p><img lazyload src="/images/loading.svg" data-src="/2025/02/05/HighFrequencyMsqlCommands/13.jpg" alt="图片"></p>
 <p>说实话，sql语句没有走索引，排除没有建索引之外，最大的可能性是索引失效了。</p>
 <p>下面说说索引失效的常见原因：</p>
-<p><img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWuQlRy7jGN7FDjLJz5BwtejgGRIGIQaKRPzdXsar5p9OFWk6WWM0mpw/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p><img lazyload src="/images/loading.svg" data-src="/2025/02/05/HighFrequencyMsqlCommands/14..jpg" alt="图片"></p>
 <p>如果不是上面的这些原因，则需要再进一步排查一下其他原因。</p>
 <h2 id="13-show-processlist"><a href="#13-show-processlist" class="headerlink" title="13.show processlist"></a><strong>13.show processlist</strong></h2><p>有些时候我们线上sql或者数据库出现了问题。比如出现了数据库连接过多问题，或者发现有一条sql语句的执行时间特别长。</p>
 <p>这时候该怎么办呢？</p>
 <p>答：我们可以使用<code>show processlist</code>命令查看<code>当前线程执行情况</code>。</p>
 <p>如图所示：</p>
-<p><img lazyload src="/images/loading.svg" data-src="https://mmbiz.qpic.cn/mmbiz_png/JdLkEI9sZfdk9avy5UmFyYZGpvZWjXrWHoHhPaF9jxXV8FvC0IuRHRG7NJH5fQg9BPwLjKvNpqWh1yJ1hzdXLw/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p><img lazyload src="/images/loading.svg" data-src="/2025/02/05/HighFrequencyMsqlCommands/15.jpg" alt="图片"></p>
 <p>从执行结果中，我们可以查看当前的连接状态，帮助识别出有问题的查询语句。</p>
 <ul>
 <li>id 线程id</li>
@@ -590,11 +603,11 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2025-02-05 14:56:05
+                    :</strong> 2025-02-06 10:57:42
             </li>
         
         <li>
-            <strong>链接:</strong> https://github.com/yzhisheng/2025/02/05/MySQL中这14个神仙功能/
+            <strong>链接:</strong> https://github.com/yzhisheng/2025/02/05/HighFrequencyMsqlCommands/
         </li>
         <li>
             <strong>
@@ -612,6 +625,14 @@
 		</div>
 		
 
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/mysql/">#mysql</a>&nbsp;
+			</li>
+			
+		</ul>
 		
 
 		
@@ -631,18 +652,6 @@
 				</a>
 			</div>
 			
-			
-			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-				<a class="next" rel="next" href="/2025/01/23/Linux%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85Nacos%E6%95%99%E7%A8%8B/">
-					<span class="title flex justify-center items-center">
-						<span class="post-nav-title-item">Linux环境安装Nacos教程</span>
-						<span class="post-nav-item">下一篇</span>
-					</span>
-					<span class="right arrow-icon flex justify-center items-center">
-						<i class="fa-solid fa-chevron-right"></i>
-					</span>
-				</a>
-			</div>
 			
 		</div>
 		
